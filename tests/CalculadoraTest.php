@@ -23,14 +23,14 @@ class CalculadoraTest extends TestCase
     {
         $calc = new Calculadora();
         $resultado = $calc->multiplicar(10,4);
-        $this->assertEquals(20, $resultado);
+        $this->assertEquals(40, $resultado);
     }
 
         public function testDividir()
     {
         $calc = new Calculadora();
         $resultado = $calc->dividir(10,4);
-        $this->assertEquals(5, $resultado);
+        $this->assertEquals(2.5, $resultado);
     }
 
         public function testDividirEntreCero()
@@ -39,4 +39,38 @@ class CalculadoraTest extends TestCase
         $calc = new Calculadora();
         $calc->dividir(10,0);
     }
+
+    //semana 08
+    public function testEsPar()
+    {
+        $calc = new Calculadora();
+        $this -> assertTrue($calc->esPar(4));
+        $this->assertFalse($calc->esPar(5));
+        $this -> assertTrue($calc->esPar(0));
+    }
+
+        public function testEsPositivo()
+    {
+        $calc = new Calculadora();
+        $this -> assertTrue($calc->esPositivo(10));
+        $this->assertFalse($calc->esPositivo(-5));
+        $this -> assertFalse($calc->esPositivo(0));
+    }
+
+        public function testEsNegativo()
+    {
+        $calc = new Calculadora();
+        $this -> assertTrue($calc->esNegativo(-10));
+        $this->assertFalse($calc->esNegativo(5));
+        $this -> assertFalse($calc->esNegativo(0));
+    }
+
+        public function testEsCero()
+    {
+        $calc = new Calculadora();
+        $this -> assertTrue($calc->esCero(0));
+        $this->assertFalse($calc->esCero(5));
+        $this -> assertFalse($calc->esCero(-5));
+    }
+    
 }
